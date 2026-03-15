@@ -1,0 +1,188 @@
+════════════════════════════════════════════════════════════════
+  EINSTIEG: Dateien erstellen & ausfuehren
+════════════════════════════════════════════════════════════════
+
+  Bevor du loslegst, musst du wissen:
+  - Was ist ein Skript?
+  - Wie erstellt man eine Skript-Datei?
+  - Wie fuehrt man sie aus?
+
+
+  Was ist ein Skript?
+  ───────────────────
+  Ein Skript ist eine Textdatei mit Befehlen, die der Computer
+  der Reihe nach ausfuehrt. Statt jeden Befehl einzeln
+  einzutippen, schreibst du sie in eine Datei und fuehrst
+  diese aus. Das spart Zeit und vermeidet Fehler.
+
+  Interaktiv starten
+  ──────────────────
+  Wenn du lieber mit einem Menue arbeitest, starte im Kursordner:
+
+    pwsh ./Start_Kurs_Interaktiv.ps1
+
+  Dort kannst du Level auswaehlen, Dateien direkt anzeigen und
+  kleine Mini-Checks beantworten.
+
+  Je nach Sprache hat die Datei eine andere Endung:
+
+    Sprache        Dateiendung   Ausfuehrung in
+    ────────────── ───────────── ─────────────────────
+    PowerShell     .ps1          PowerShell / Terminal
+    Batch          .bat / .cmd   Eingabeaufforderung (cmd.exe)
+    Shell (Bash)   .sh           Terminal (Linux / macOS)
+
+
+  ══════════════════════════════════════════════════════════════
+   POWERSHELL (.ps1)
+  ══════════════════════════════════════════════════════════════
+
+  1. Datei erstellen
+  ──────────────────
+  Option A: In VS Code
+    - Oeffne VS Code
+    - Datei > Neue Datei (Strg+N / Cmd+N)
+    - Speichere als "MeinSkript.ps1" (Strg+S / Cmd+S)
+    - Schreibe deinen Code hinein
+
+  Option B: Im Explorer
+    - Rechtsklick > Neu > Textdokument
+    - Benenne es um in "MeinSkript.ps1"
+    - Oeffne es mit einem Texteditor (VS Code empfohlen!)
+    - ACHTUNG: Die Dateiendung muss .ps1 sein, NICHT .ps1.txt!
+      (Im Explorer: Ansicht > Dateinamenerweiterungen aktivieren)
+
+  Option C: Direkt in PowerShell
+    - Oeffne PowerShell
+    - Tippe: New-Item -Path "MeinSkript.ps1" -ItemType File
+    - Oder:  notepad MeinSkript.ps1
+
+
+  2. Datei ausfuehren
+  ───────────────────
+  Option A: In VS Code (EMPFOHLEN)
+    - Oeffne die .ps1-Datei in VS Code
+    - Druecke F5 um das ganze Skript auszufuehren
+    - Oder: Markiere einen Teil und druecke F8 (nur Auswahl)
+
+  Option B: In PowerShell direkt
+    - Oeffne PowerShell (oder Windows Terminal)
+    - Navigiere zum Ordner: cd "C:\Pfad\zum\Ordner"
+    - Fuehre aus: .\MeinSkript.ps1
+
+  Option C: Rechtsklick
+    - Rechtsklick auf die .ps1-Datei
+    - "Mit PowerShell ausfuehren"
+
+
+  3. Execution Policy (Wichtig!)
+  ─────────────────────────────
+  Windows blockiert standardmaessig das Ausfuehren von Skripten.
+  Falls du einen Fehler bekommst wie:
+    "Die Datei kann nicht geladen werden, da die Ausfuehrung
+     von Skripts auf diesem System deaktiviert ist."
+
+  Loesung (PowerShell als Administrator oeffnen):
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+  Danach funktionieren lokale Skripte.
+
+
+  ══════════════════════════════════════════════════════════════
+   BATCH (.bat)
+  ══════════════════════════════════════════════════════════════
+
+  1. Datei erstellen
+  ──────────────────
+  - Oeffne einen Texteditor (VS Code, Notepad, etc.)
+  - Schreibe deinen Code (erste Zeile meistens: @echo off)
+  - Speichere als "MeinSkript.bat"
+  - ACHTUNG: In Notepad bei "Dateityp" unbedingt
+    "Alle Dateien (*.*)" waehlen, sonst wird es .bat.txt!
+
+  2. Datei ausfuehren
+  ───────────────────
+  Option A: Doppelklick
+    - Einfach auf die .bat-Datei doppelklicken
+    - Ein CMD-Fenster oeffnet sich und fuehrt das Skript aus
+    - Tipp: Schreibe "pause" am Ende, damit das Fenster offen bleibt
+
+  Option B: In der Eingabeaufforderung (cmd)
+    - Oeffne cmd (Windows+R > "cmd" > Enter)
+    - Navigiere zum Ordner: cd "C:\Pfad\zum\Ordner"
+    - Fuehre aus: MeinSkript.bat
+
+  Option C: In VS Code
+    - Oeffne die .bat-Datei
+    - Terminal oeffnen (Strg+Oe / Cmd+Oe)
+    - Im Terminal: .\MeinSkript.bat
+
+
+  ══════════════════════════════════════════════════════════════
+   SHELL / BASH (.sh)
+  ══════════════════════════════════════════════════════════════
+
+  1. Datei erstellen
+  ──────────────────
+  - Oeffne einen Texteditor (VS Code, nano, vim, etc.)
+  - Erste Zeile IMMER: #!/bin/bash  (der "Shebang")
+  - Schreibe deinen Code darunter
+  - Speichere als "MeinSkript.sh"
+
+  In Terminal direkt:
+    nano MeinSkript.sh       (Editor oeffnet sich)
+    oder: touch MeinSkript.sh  (leere Datei erstellen)
+
+  2. Datei ausfuehrbar machen (EINMALIG noetig!)
+  ───────────────────────────────────────────────
+  chmod +x MeinSkript.sh
+
+  Das macht die Datei ausfuehrbar. Muss nur EINMAL gemacht werden.
+
+  3. Datei ausfuehren
+  ───────────────────
+  Option A: Direkt
+    ./MeinSkript.sh
+
+  Option B: Mit bash
+    bash MeinSkript.sh       (chmod nicht noetig)
+
+  Option C: In VS Code
+    - Oeffne die .sh-Datei
+    - Terminal oeffnen
+    - Im Terminal: bash MeinSkript.sh
+
+
+  ══════════════════════════════════════════════════════════════
+   VS CODE EINRICHTEN (Empfohlen fuer alle Sprachen!)
+  ══════════════════════════════════════════════════════════════
+
+  1. VS Code installieren
+     https://code.visualstudio.com/
+
+  2. Nuetzliche Erweiterungen installieren:
+     - "PowerShell" von Microsoft (fuer .ps1-Dateien)
+     - "Shell Format" (fuer .sh-Dateien)
+
+  3. Terminal in VS Code oeffnen:
+     Strg+Oe (Windows) / Cmd+Oe (macOS)
+     Oder: Menue > Terminal > Neues Terminal
+
+  4. Ordner oeffnen:
+     Datei > Ordner oeffnen > Kursordner auswaehlen
+     So siehst du alle Level auf einen Blick.
+
+
+  ══════════════════════════════════════════════════════════════
+   ZUSAMMENFASSUNG
+  ══════════════════════════════════════════════════════════════
+
+  Sprache       Erstellen           Ausfuehren
+  ───────────── ─────────────────── ──────────────────────────
+  PowerShell    Datei.ps1 anlegen   F5 in VS Code / .\Datei.ps1
+  Batch         Datei.bat anlegen   Doppelklick / Datei.bat
+  Shell         Datei.sh anlegen    chmod +x / ./Datei.sh
+
+  Tipp: Verwende IMMER VS Code als Editor. Es erkennt die
+  Sprache automatisch, faerbt den Code ein (Syntax-Highlighting)
+  und macht das Ausfuehren einfach!
