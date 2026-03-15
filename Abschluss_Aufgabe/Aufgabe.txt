@@ -1,0 +1,140 @@
+================================================================
+ ABSCHLUSSAUFGABE: Schuelerverwaltung
+================================================================
+
+Baue Schritt fuer Schritt ein kleines Verwaltungsskript,
+das alle Themen aus Level 1-8 kombiniert:
+Ausgabe, Variablen, Eingabe, Bedingungen, Arrays,
+Schleifen, Funktionen, Dateien & Pipeline.
+
+Arbeite in der Datei "Aufgabe.ps1" und ersetze dort
+die Luecken (___) durch den richtigen Code.
+
+
+══════════════════════════════════════════════════════════════
+ TEIL 1: Funktionen definieren (Level 7)
+══════════════════════════════════════════════════════════════
+
+Aufgabe 1.1:
+  Schreibe eine Funktion "New-Schueler", die drei Parameter
+  entgegennimmt: Name (Text), Alter (Zahl) und Note (Zahl).
+  Die Funktion soll eine Hashtable mit diesen drei Werten
+  zurueckgeben. Der Standardwert fuer Note soll 3 sein.
+
+Aufgabe 1.2:
+  Schreibe eine Funktion "Get-Notentext", die eine Note (1-6)
+  als Zahl entgegennimmt und den passenden Text zurueckgibt.
+  Verwende dazu switch.
+    1 = "Sehr gut"
+    2 = "Gut"
+    3 = "Befriedigend"
+    4 = "Ausreichend"
+    5 = "Mangelhaft"
+    6 = "Ungenuegend"
+
+Aufgabe 1.3:
+  Schreibe eine Funktion "Get-Durchschnitt", die ein Array
+  von Schueler-Hashtables entgegennimmt und den
+  Notendurchschnitt berechnet und zurueckgibt.
+  Tipp: foreach-Schleife, Summe bilden, durch Anzahl teilen.
+
+
+══════════════════════════════════════════════════════════════
+ TEIL 2: Schueler anlegen (Level 2, 5)
+══════════════════════════════════════════════════════════════
+
+Aufgabe 2.1:
+  Erstelle ein leeres Array fuer die Schuelerliste.
+  Fuege dann mit deiner Funktion "New-Schueler" mindestens
+  5 Schueler hinzu (z.B. Anna, Ben, Clara, David, Eva).
+  Vergib jeweils ein Alter und eine Note.
+
+
+══════════════════════════════════════════════════════════════
+ TEIL 3: Ausgabe & Schleifen (Level 1, 6)
+══════════════════════════════════════════════════════════════
+
+Aufgabe 3.1:
+  Gib eine formatierte Ueberschrift aus:
+    "=============================="
+    "  Schuelerverwaltung"
+    "=============================="
+
+Aufgabe 3.2:
+  Gib alle Schueler in einer foreach-Schleife aus.
+  Format: "Name (Alter Jahre) - Note: X (Notentext)"
+  Verwende deine Funktion Get-Notentext fuer den Notentext.
+
+
+══════════════════════════════════════════════════════════════
+ TEIL 4: Auswertung mit Bedingungen (Level 4)
+══════════════════════════════════════════════════════════════
+
+Aufgabe 4.1:
+  Berechne den Notendurchschnitt mit deiner Funktion
+  Get-Durchschnitt und gib ihn auf 2 Nachkommastellen
+  gerundet aus.
+  Tipp: [math]::Round($wert, 2)
+
+Aufgabe 4.2:
+  Zaehle in einer Schleife, wie viele Schueler bestanden
+  haben (Note 1-4) und wie viele durchgefallen sind
+  (Note 5-6). Gib das Ergebnis aus.
+
+Aufgabe 4.3:
+  Finde den besten und den schlechtesten Schueler.
+  Tipp: Starte mit dem ersten Schueler als Referenz
+  und vergleiche in einer Schleife.
+
+
+══════════════════════════════════════════════════════════════
+ TEIL 5: Benutzereingabe (Level 3)
+══════════════════════════════════════════════════════════════
+
+Aufgabe 5.1:
+  Frage den Benutzer, ob ein neuer Schueler hinzugefuegt
+  werden soll (j/n). Wenn ja: Name, Alter und Note abfragen,
+  einen neuen Schueler mit New-Schueler erstellen und an
+  das Array anhaengen.
+  ACHTUNG: Alter und Note muessen mit [int] gecastet werden!
+
+
+══════════════════════════════════════════════════════════════
+ TEIL 6: Dateien & Pipeline (Level 8)
+══════════════════════════════════════════════════════════════
+
+Aufgabe 6.1:
+  Erstelle einen Ordner "Ergebnisse" (falls nicht vorhanden).
+  Exportiere die Schuelerliste als CSV-Datei dorthin.
+  Tipp: Hashtables muessen erst zu PSCustomObject umgewandelt
+  werden, damit Export-Csv funktioniert.
+
+Aufgabe 6.2:
+  Erstelle zusaetzlich eine Textdatei "bericht.txt" mit
+  einer Zusammenfassung:
+    - Anzahl Schueler
+    - Notendurchschnitt
+    - Bestanden / Durchgefallen
+    - Bester / Schlechtester Schueler
+
+Aufgabe 6.3:
+  Lies die Berichtsdatei wieder ein und gib sie auf der
+  Konsole aus.
+
+
+══════════════════════════════════════════════════════════════
+ BONUS: Erweiterungen (freiwillig)
+══════════════════════════════════════════════════════════════
+
+B.1: Baue eine Schleife, in der der Benutzer beliebig viele
+     Schueler nacheinander hinzufuegen kann (do-while).
+
+B.2: Sortiere die Schuelerliste nach Note (aufsteigend)
+     mit Sort-Object und gib eine Rangliste aus.
+
+B.3: Pruefe bei der Eingabe, ob die Note zwischen 1 und 6
+     liegt. Falls nicht, gib eine Fehlermeldung aus und
+     frage erneut (while-Schleife).
+
+B.4: Erweitere New-Schueler um ein Feld "Fach" und passe
+     alle Ausgaben und den Export entsprechend an.
