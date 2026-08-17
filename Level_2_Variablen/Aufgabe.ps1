@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 2: Variablen & Datentypen – AUFGABEN
 #  Ersetze ___ durch den richtigen Code.
 # ================================================================
@@ -13,7 +13,7 @@
 
 # ── AUFGABE 2.2 ──────────────────────────────────────────────
 # Gib folgenden Satz aus (mit String-Interpolation):
-# "Ich heisse [Name] und bin [Alter] Jahre alt."
+# "Ich heiße [Name] und bin [Alter] Jahre alt."
 
 # Write-Host "___"
 

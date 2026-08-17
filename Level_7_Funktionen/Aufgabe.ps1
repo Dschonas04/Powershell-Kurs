@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 7: Funktionen – AUFGABEN
 #  Ersetze ___ durch den richtigen Code.
 # ================================================================
@@ -25,16 +25,16 @@
 
 # function Get-Rechteck {
 #     param (
-#         [double]$Laenge,
+#         [double]$Länge,
 #         [double]$Breite
 #     )
-#     $flaeche = ___
+#     $fläche = ___
 #     $umfang = ___
-#     Write-Host "Rechteck: ${Laenge}cm x ${Breite}cm"
-#     Write-Host "  Flaeche: $flaeche cm²"
+#     Write-Host "Rechteck: ${Länge}cm x ${Breite}cm"
+#     Write-Host "  Fläche: $fläche cm²"
 #     Write-Host "  Umfang:  $umfang cm"
 # }
-# Get-Rechteck -Laenge 5 -Breite 3
+# Get-Rechteck -Länge 5 -Breite 3
 
 
 # ── AUFGABE 7.3 ──────────────────────────────────────────────
@@ -50,18 +50,18 @@
 
 
 # ── AUFGABE 7.4 ──────────────────────────────────────────────
-# Schreibe eine Funktion "Get-Begruessung" mit einem
+# Schreibe eine Funktion "Get-Begrüßung" mit einem
 # Standardwert für $Name (z.B. "Welt").
 # Teste sie einmal ohne und einmal mit Parameter.
 
-# function Get-Begruessung {
+# function Get-Begrüßung {
 #     param (
 #         [string]$Name = "___"
 #     )
 #     return "___"
 # }
-# Write-Host (Get-Begruessung)
-# Write-Host (Get-Begruessung -Name "Max")
+# Write-Host (Get-Begrüßung)
+# Write-Host (Get-Begrüßung -Name "Max")
 
 
 # ── BONUS ────────────────────────────────────────────────────

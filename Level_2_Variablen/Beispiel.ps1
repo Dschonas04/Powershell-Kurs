@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 2: Variablen & Datentypen – BEISPIELE
 #  Führe diese Datei aus (F5) oder markiere Teile (F8).
 # ================================================================
@@ -22,7 +22,7 @@ Write-Host "  alter:   $($alter.GetType().Name)"      # Int32
 Write-Host "  istToll: $($istToll.GetType().Name)"    # Boolean
 
 # Einfache vs. doppelte Anführungszeichen
-Write-Host "`nAnfuehrungszeichen:"
+Write-Host "`nAnführungszeichen:"
 Write-Host "  Doppelt: Sprache ist $name"     # → Sprache ist PowerShell
 Write-Host '  Einfach: Sprache ist $name'     # → Sprache ist $name
 

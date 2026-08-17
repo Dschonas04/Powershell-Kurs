@@ -8,7 +8,7 @@ title Batch-Aufgaben
 :: ================================================================
 
 :: ── AUFGABE B.1: Ausgabe & Variablen ────────────────────────
-:: Erstelle Variablen fuer deinen Namen und dein Alter.
+:: Erstelle Variablen für deinen Namen und dein Alter.
 :: Gib aus: "Ich bin [Name] und [Alter] Jahre alt."
 
 REM set name=___
@@ -18,8 +18,8 @@ REM echo Ich bin %___% und %___% Jahre alt.
 
 :: ── AUFGABE B.2: Benutzereingabe & Bedingung ───────────────
 :: Frage den Benutzer nach einer Zahl.
-:: Wenn die Zahl >= 18 ist, gib "Volljaehrig" aus.
-:: Sonst gib "Minderjaehrig" aus.
+:: Wenn die Zahl >= 18 ist, gib "Volljährig" aus.
+:: Sonst gib "Minderjährig" aus.
 
 REM set /p zahl=Gib eine Zahl ein: 
 REM if %zahl% ___ 18 (
@@ -30,7 +30,7 @@ REM )
 
 
 :: ── AUFGABE B.3: Schleifen ─────────────────────────────────
-:: Zaehle von 2 bis 20 in 2er-Schritten (2, 4, 6, ... 20)
+:: Zähle von 2 bis 20 in 2er-Schritten (2, 4, 6, ... 20)
 :: Tipp: for /l %%i in (Start,Schritt,Ende) do ...
 
 REM for /l %%i in (___,___,___) do echo %%i
@@ -68,7 +68,7 @@ REM :Ende
 
 
 :: ── BONUS ──────────────────────────────────────────────────
-:: Erstelle ein kleines Menue-System mit GOTO:
+:: Erstelle ein kleines Menü-System mit GOTO:
 :: 1) Datum anzeigen
 :: 2) Benutzer anzeigen
 :: 3) Beenden
@@ -76,5 +76,5 @@ REM :Ende
 
 echo.
 echo Alle Aufgaben befinden sich oben im Code!
-echo Entferne REM und ersetze ___ um sie zu loesen.
+echo Entferne REM und ersetze ___ um sie zu lösen.
 pause

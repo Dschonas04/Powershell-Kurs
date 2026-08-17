@@ -8,7 +8,7 @@
 
   for-Schleife (Zählschleife)
   ─────────────────────────────
-  Wenn du weisst, WIE OFT etwas laufen soll.
+  Wenn du weißt, WIE OFT etwas laufen soll.
 
   Aufbau:  for (START; BEDINGUNG; SCHRITT) { ... }
 

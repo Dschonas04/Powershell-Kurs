@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 5: Arrays & Hashtables – AUFGABEN
 #  Ersetze ___ durch den richtigen Code.
 # ================================================================
@@ -41,12 +41,12 @@
 # Erstelle ein Array von 3 Schüler-Hashtables und gib
 # mit foreach alle Schüler mit Name und Note aus.
 
-# $schueler = @(
+# $schüler = @(
 #     @{ Name = "___"; Note = ___ },
 #     @{ Name = "___"; Note = ___ },
 #     @{ Name = "___"; Note = ___ }
 # )
-# foreach ($s in $schueler) {
+# foreach ($s in $schüler) {
 #     Write-Host "$($s.___): Note $($s.___)"
 # }
 

@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $kursElemente = @(
     [pscustomobject]@{ Key = '0'; Name = 'Level 0 - Einstieg'; Folder = 'Level_0_Einstieg'; TheoryFile = 'Anleitung.txt'; ExampleFile = $null; TaskFile = $null }
@@ -98,15 +98,15 @@ function Start-LevelQuiz {
             if ($antwort.Trim().ToLower() -eq 'read-host') {
                 Write-Host 'Perfekt: Read-Host liest Benutzereingaben.' -ForegroundColor Green
             } else {
-                Write-Host 'Hier ist die Loesung: Read-Host.' -ForegroundColor Yellow
+                Write-Host 'Hier ist die Lösung: Read-Host.' -ForegroundColor Yellow
             }
         }
         '4' {
-            $antwort = Read-Host 'Welche Abfrage verwendet man fuer Bedingungen in PowerShell?'
+            $antwort = Read-Host 'Welche Abfrage verwendet man für Bedingungen in PowerShell?'
             if ($antwort.Trim().ToLower() -eq 'if') {
                 Write-Host 'Genau: if ist die Standard-Bedingung.' -ForegroundColor Green
             } else {
-                Write-Host 'Die einfachste Antwort waere: if.' -ForegroundColor Yellow
+                Write-Host 'Die einfachste Antwort wäre: if.' -ForegroundColor Yellow
             }
         }
         '5' {
@@ -118,7 +118,7 @@ function Start-LevelQuiz {
             }
         }
         '6' {
-            $antwort = Read-Host 'Welche Schleife laeuft ueber alle Elemente einer Liste: foreach, if oder switch?'
+            $antwort = Read-Host 'Welche Schleife läuft über alle Elemente einer Liste: foreach, if oder switch?'
             if ($antwort.Trim().ToLower() -eq 'foreach') {
                 Write-Host 'Richtig: foreach verarbeitet Elemente nacheinander.' -ForegroundColor Green
             } else {
@@ -126,7 +126,7 @@ function Start-LevelQuiz {
             }
         }
         '7' {
-            $antwort = Read-Host 'Mit welchem Schluesselwort definierst du eine Funktion?'
+            $antwort = Read-Host 'Mit welchem Schlüsselwort definierst du eine Funktion?'
             if ($antwort.Trim().ToLower() -eq 'function') {
                 Write-Host 'Genau: function startet eine Funktionsdefinition.' -ForegroundColor Green
             } else {
@@ -136,21 +136,21 @@ function Start-LevelQuiz {
         '8' {
             $antwort = Read-Host 'Welches Zeichen leitet die Pipeline ein?'
             if ($antwort.Trim() -eq '|') {
-                Write-Host 'Exakt: | verbindet Befehle ueber die Pipeline.' -ForegroundColor Green
+                Write-Host 'Exakt: | verbindet Befehle über die Pipeline.' -ForegroundColor Green
             } else {
                 Write-Host 'Gemeint war das Pipe-Zeichen: |' -ForegroundColor Yellow
             }
         }
         'B' {
-            $antwort = Read-Host 'Welche Batch-Zeile unterdrueckt die Echo-Ausgabe haeufig am Anfang?'
+            $antwort = Read-Host 'Welche Batch-Zeile unterdrückt die Echo-Ausgabe häufig am Anfang?'
             if ($antwort.Trim().ToLower() -eq '@echo off') {
                 Write-Host 'Richtig: @echo off ist der Klassiker.' -ForegroundColor Green
             } else {
-                Write-Host 'Typisch waere: @echo off.' -ForegroundColor Yellow
+                Write-Host 'Typisch wäre: @echo off.' -ForegroundColor Yellow
             }
         }
         'S' {
-            $antwort = Read-Host 'Wie heisst die erste Zeile vieler Bash-Skripte?'
+            $antwort = Read-Host 'Wie heißt die erste Zeile vieler Bash-Skripte?'
             if ($antwort.Trim().ToLower() -eq '#!/bin/bash') {
                 Write-Host 'Genau: das ist der Shebang.' -ForegroundColor Green
             } else {
@@ -158,7 +158,7 @@ function Start-LevelQuiz {
             }
         }
         default {
-            Write-Host 'Fuer dieses Element gibt es noch keinen Mini-Check.' -ForegroundColor Yellow
+            Write-Host 'Für dieses Element gibt es noch keinen Mini-Check.' -ForegroundColor Yellow
         }
     }
 
@@ -179,7 +179,7 @@ function Start-LevelMenu {
             Write-Host '3 - Aufgabe anzeigen'
         }
         Write-Host '4 - Mini-Check starten'
-        Write-Host 'M - Zurueck zum Hauptmenue'
+        Write-Host 'M - Zurück zum Hauptmenü'
         Write-Host ''
 
         $auswahl = (Read-Host 'Deine Auswahl').Trim().ToUpper()
@@ -217,7 +217,7 @@ function Start-LevelMenu {
 
 while ($true) {
     Show-Header 'PowerShell Kurs - Interaktiv'
-    Write-Host 'Waehle ein Level oder einen Zusatzbereich:'
+    Write-Host 'Wähle ein Level oder einen Zusatzbereich:'
     Write-Host ''
 
     foreach ($element in $kursElemente) {
@@ -231,17 +231,17 @@ while ($true) {
 
     if ($auswahl -eq 'Q') {
         Show-Header 'Bis bald!'
-        Write-Host 'Viel Erfolg beim Ueben.' -ForegroundColor Green
+        Write-Host 'Viel Erfolg beim Üben.' -ForegroundColor Green
         break
     }
 
-    $gewaehlt = $kursElemente | Where-Object { $_.Key -eq $auswahl } | Select-Object -First 1
+    $gewählt = $kursElemente | Where-Object { $_.Key -eq $auswahl } | Select-Object -First 1
 
-    if ($null -eq $gewaehlt) {
-        Write-Host "Ungueltige Eingabe: $auswahl" -ForegroundColor Yellow
+    if ($null -eq $gewählt) {
+        Write-Host "Ungültige Eingabe: $auswahl" -ForegroundColor Yellow
         Start-Sleep -Seconds 1
         continue
     }
 
-    Start-LevelMenu -Item $gewaehlt
+    Start-LevelMenu -Item $gewählt
 }

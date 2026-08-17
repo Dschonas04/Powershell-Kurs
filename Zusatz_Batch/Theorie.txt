@@ -106,10 +106,10 @@
   ───────────────
   Batch nutzt GOTO für Sprünge (kein Funktionskonzept!):
 
-  goto :menue
+  goto :menü
 
-  :menue
-  echo Du bist im Menue
+  :menü
+  echo Du bist im Menü
   goto :eof              ← Skript beenden
 
 

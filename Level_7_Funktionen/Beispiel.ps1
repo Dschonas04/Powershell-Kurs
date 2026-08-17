@@ -1,10 +1,10 @@
-# ================================================================
+﻿# ================================================================
 #  Level 7: Funktionen – BEISPIELE
 #  Führe diese Datei aus (F5) oder markiere Teile (F8).
 # ================================================================
 
 # --- Einfache Funktion mit Standardwert ---
-function Get-Begruessung {
+function Get-Begrüßung {
     param (
         [string]$Name = "Welt",
         [string]$Tageszeit = "Tag"
@@ -12,8 +12,8 @@ function Get-Begruessung {
     return "Guten $Tageszeit, $Name! Willkommen zum PowerShell Kurs!"
 }
 
-Write-Host (Get-Begruessung)
-Write-Host (Get-Begruessung -Name "Max" -Tageszeit "Morgen")
+Write-Host (Get-Begrüßung)
+Write-Host (Get-Begrüßung -Name "Max" -Tageszeit "Morgen")
 
 # --- Funktion mit Berechnung ---
 function Get-Summe {
@@ -30,18 +30,18 @@ Write-Host "`nGet-Summe: 15 + 27 = $ergebnis"
 # --- Funktion mit mehreren Ausgaben ---
 function Get-Rechteck {
     param (
-        [double]$Laenge,
+        [double]$Länge,
         [double]$Breite
     )
-    $flaeche = $Laenge * $Breite
-    $umfang = 2 * ($Laenge + $Breite)
-    Write-Host "  Rechteck: ${Laenge}cm x ${Breite}cm"
-    Write-Host "  Flaeche:  $flaeche cm²"
+    $fläche = $Länge * $Breite
+    $umfang = 2 * ($Länge + $Breite)
+    Write-Host "  Rechteck: ${Länge}cm x ${Breite}cm"
+    Write-Host "  Fläche:  $fläche cm²"
     Write-Host "  Umfang:   $umfang cm"
 }
 
 Write-Host "`nGet-Rechteck:"
-Get-Rechteck -Laenge 5 -Breite 3
+Get-Rechteck -Länge 5 -Breite 3
 
 # --- Funktion mit Boolean-Rückgabe ---
 function Test-GeradeZahl {

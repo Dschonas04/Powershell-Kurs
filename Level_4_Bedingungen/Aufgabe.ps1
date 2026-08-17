@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 4: Bedingungen – AUFGABEN
 #  Ersetze ___ mit dem richtigen Operator oder Code.
 # ================================================================
@@ -24,9 +24,9 @@
 # Ersetze ___ mit dem richtigen Operator.
 
 # $personAlter = 20
-# $hatFuehrerschein = $true
+# $hatFührerschein = $true
 #
-# if ($personAlter ___ 18 ___ $hatFuehrerschein -eq $true) {
+# if ($personAlter ___ 18 ___ $hatFührerschein -eq $true) {
 #     Write-Host "Du darfst Auto fahren!"
 # } else {
 #     Write-Host "Du darfst leider nicht fahren."

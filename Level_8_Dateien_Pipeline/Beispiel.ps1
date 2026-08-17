@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 8: Dateien, Pipeline & Cmdlets – BEISPIELE
 #  Führe diese Datei aus (F5) oder markiere Teile (F8).
 # ================================================================
@@ -16,7 +16,7 @@ New-Item -Path $testPfad -ItemType Directory -Force | Out-Null
 "Zeile 3: Fertig!" | Add-Content "$testPfad\log.txt"
 
 "Server: SRV-DC01`nIP: 192.168.1.10" | Out-File "$testPfad\server.txt"
-"User: Admin`nRolle: Domaenadmin" | Out-File "$testPfad\user.txt"
+"User: Admin`nRolle: Domänenadmin" | Out-File "$testPfad\user.txt"
 
 # Datei lesen
 $inhalt = Get-Content "$testPfad\log.txt"
@@ -34,7 +34,7 @@ Get-ChildItem $testPfad | ForEach-Object {
 
 # Aufräumen
 Remove-Item -Path $testPfad -Recurse -Force
-Write-Host "  Ordner aufgeraeumt."
+Write-Host "  Ordner aufgeräumt."
 
 # --- Pipeline-Beispiele ---
 Write-Host "`nPipeline-Beispiele:"
@@ -62,7 +62,7 @@ Get-Process |
     ForEach-Object { Write-Host "    $($_.Name): $($_.MB) MB" }
 
 # Pipeline: Dateien im aktuellen Ordner
-Write-Host "`n  Dateien hier (nach Groesse):"
+Write-Host "`n  Dateien hier (nach Größe):"
 Get-ChildItem -Path "." -File |
     Sort-Object Length -Descending |
     Select-Object Name, @{N="KB"; E={[math]::Round($_.Length/1KB, 1)}} -First 5 |

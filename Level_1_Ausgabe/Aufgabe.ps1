@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 1: Ausgabe auf der Konsole – AUFGABEN
 #  Ersetze ___ durch den richtigen Code.
 #  Entferne das # vor den Zeilen die du ausführen willst.

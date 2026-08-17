@@ -130,13 +130,13 @@
   Funktionen
   ─────────────
   # Funktion definieren
-  begruessung() {
+  begrüßung() {
       echo "Hallo, $1!"     ← $1 = erster Parameter
   }
 
   # Funktion aufrufen
-  begruessung "Welt"
-  begruessung "Shell"
+  begrüßung "Welt"
+  begrüßung "Shell"
 
   # Funktion mit Rückgabewert
   addiere() {
