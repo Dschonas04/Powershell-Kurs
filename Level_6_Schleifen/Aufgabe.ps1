@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 6: Schleifen – AUFGABEN
 #  Ersetze ___ durch den richtigen Code.
 # ================================================================
@@ -22,10 +22,10 @@
 # Nummeriere die Ausgabe (1. Tier, 2. Tier, ...).
 
 # $tiere = @("___", "___", "___", "___", "___")
-# $zaehler = 1
+# $zähler = 1
 # foreach ($tier in ___) {
-#     Write-Host "$zaehler. ___"
-#     $zaehler___
+#     Write-Host "$zähler. ___"
+#     $zähler___
 # }
 
 

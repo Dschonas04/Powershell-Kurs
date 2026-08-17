@@ -3,7 +3,7 @@ chcp 65001 >nul
 title Batch-Beispiele
 :: ================================================================
 ::  Zusatz: Batch-Scripting – BEISPIELE
-::  Doppelklicke diese Datei oder fuehre sie in CMD aus.
+::  Doppelklicke diese Datei oder führe sie in CMD aus.
 :: ================================================================
 
 :: --- Ausgabe ---
@@ -13,30 +13,30 @@ echo ========================================
 echo.
 
 :: --- Variablen ---
-set name=PowerShell-Schueler
+set name=PowerShell-Schüler
 set /a alter=25
 set /a naechstes_jahr=%alter%+1
 echo Hallo %name%!
 echo Du bist %alter% Jahre alt.
-echo Naechstes Jahr bist du %naechstes_jahr%.
+echo Nächstes Jahr bist du %naechstes_jahr%.
 echo.
 
 :: --- Benutzereingabe ---
-set /p benutzername=Wie heisst du? 
-echo Hallo %benutzername%, schoener Name!
+set /p benutzername=Wie heißt du? 
+echo Hallo %benutzername%, schöner Name!
 echo.
 
 :: --- Bedingungen ---
 set /a zahl=42
 if %zahl% GEQ 40 (
-    echo %zahl% ist groesser oder gleich 40.
+    echo %zahl% ist größer oder gleich 40.
 ) else (
     echo %zahl% ist kleiner als 40.
 )
 echo.
 
 :: --- Schleifen ---
-echo Zaehle von 1 bis 5:
+echo Zähle von 1 bis 5:
 for /l %%i in (1,1,5) do (
     echo   Nummer: %%i
 )
@@ -52,7 +52,7 @@ echo.
 echo Erstelle Testordner und Dateien...
 mkdir TestOrdner 2>nul
 echo Zeile 1: Hallo Welt > TestOrdner\test.txt
-echo Zeile 2: Batch ist alt aber nuetzlich >> TestOrdner\test.txt
+echo Zeile 2: Batch ist alt aber nützlich >> TestOrdner\test.txt
 echo Zeile 3: Fertig! >> TestOrdner\test.txt
 
 echo Inhalt von test.txt:
@@ -64,7 +64,7 @@ echo Dateien im TestOrdner:
 dir /b TestOrdner
 echo.
 
-:: Pruefen ob Datei existiert
+:: Prüfen ob Datei existiert
 if exist "TestOrdner\test.txt" (
     echo Die Datei existiert!
 ) else (
@@ -72,20 +72,20 @@ if exist "TestOrdner\test.txt" (
 )
 echo.
 
-:: Aufraeumen
+:: Aufräumen
 rmdir /s /q TestOrdner
-echo Testordner aufgeraeumt.
+echo Testordner aufgeräumt.
 echo.
 
 :: --- Funktionen (simuliert) ---
 echo Funktionsbeispiel:
-call :Begruessung "Welt"
-call :Begruessung "Batch"
+call :Begrüßung "Welt"
+call :Begrüßung "Batch"
 call :Addiere 10 20
 echo.
 goto :WeiterNachFunktionen
 
-:Begruessung
+:Begrüßung
 echo   Hallo, %~1!
 goto :eof
 
@@ -106,7 +106,7 @@ if %errorlevel% neq 0 (
 )
 echo.
 
-:: --- Nuetzliche Befehle ---
+:: --- Nützliche Befehle ---
 echo System-Info:
 echo   Benutzer: %username%
 echo   Computer: %computername%

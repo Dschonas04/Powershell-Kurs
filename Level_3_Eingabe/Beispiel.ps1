@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 3: Benutzereingabe & Berechnungen – BEISPIELE
 #  HINWEIS: Read-Host Beispiele sind auskommentiert,
 #  damit das Skript durchlaufen kann. Entkommentiere zum Testen!
@@ -6,7 +6,7 @@
 
 # --- Einfache Eingabe ---
 # $stadt = Read-Host "In welcher Stadt wohnst du?"
-# Write-Host "Cool, $stadt ist bestimmt schoen!" -ForegroundColor Green
+# Write-Host "Cool, $stadt ist bestimmt schön!" -ForegroundColor Green
 
 # --- Eingabe mit Typ-Umwandlung ---
 # [int]$zahl1 = Read-Host "Erste Zahl"
@@ -18,7 +18,7 @@
 # $eingabe = Read-Host "Gib eine Zahl ein"
 # $zahl = $eingabe -as [int]
 # if ($null -eq $zahl) {
-#     Write-Host "Das war keine gueltige Zahl!" -ForegroundColor Red
+#     Write-Host "Das war keine gültige Zahl!" -ForegroundColor Red
 # } else {
 #     Write-Host "Doppelt: $($zahl * 2)"
 # }

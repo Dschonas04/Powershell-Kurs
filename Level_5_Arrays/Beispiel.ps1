@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 5: Arrays & Hashtables – BEISPIELE
 #  Führe diese Datei aus (F5) oder markiere Teile (F8).
 # ================================================================
@@ -37,13 +37,13 @@ $server["OS"] = "Windows Server 2022"
 Write-Host "  Neues Paar - OS: $($server.OS)"
 
 # --- Array von Hashtables (Mini-Datenbank) ---
-Write-Host "`nSchueler-Datenbank:"
-$schueler = @(
+Write-Host "`nSchüler-Datenbank:"
+$schüler = @(
     @{ Name = "Anna";  Note = 2; Fach = "Mathe" },
     @{ Name = "Ben";   Note = 1; Fach = "Deutsch" },
     @{ Name = "Clara"; Note = 3; Fach = "Englisch" }
 )
 
-foreach ($s in $schueler) {
+foreach ($s in $schüler) {
     Write-Host "  $($s.Name): Note $($s.Note) in $($s.Fach)"
 }

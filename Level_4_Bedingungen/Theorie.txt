@@ -14,9 +14,9 @@
   ─────────── ──────────────────────── ──────────────────────
   -eq         gleich (equal)           5 -eq 5    → $true
   -ne         ungleich (not equal)     5 -ne 3    → $true
-  -gt         grösser (greater than)   5 -gt 3    → $true
+  -gt         größer (greater than)   5 -gt 3    → $true
   -lt         kleiner (less than)      3 -lt 5    → $true
-  -ge         grösser/gleich           5 -ge 5    → $true
+  -ge         größer/gleich           5 -ge 5    → $true
   -le         kleiner/gleich           3 -le 5    → $true
 
   Für Strings:

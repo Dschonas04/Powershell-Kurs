@@ -11,17 +11,17 @@ echo "========================================"
 echo ""
 
 # --- Variablen ---
-name="Shell-Schueler"
+name="Shell-Schüler"
 alter=25
 naechstes_jahr=$((alter + 1))
 echo "Hallo $name!"
 echo "Du bist $alter Jahre alt."
-echo "Naechstes Jahr bist du $naechstes_jahr."
+echo "Nächstes Jahr bist du $naechstes_jahr."
 echo ""
 
 # --- Benutzereingabe ---
-read -p "Wie heisst du? " benutzername
-echo "Hallo $benutzername, schoener Name!"
+read -p "Wie heißt du? " benutzername
+echo "Hallo $benutzername, schöner Name!"
 echo ""
 
 # --- Rechnen ---
@@ -39,7 +39,7 @@ echo ""
 zahl=42
 echo "Bedingungen:"
 if [ $zahl -ge 40 ]; then
-    echo "  $zahl ist groesser oder gleich 40."
+    echo "  $zahl ist größer oder gleich 40."
 else
     echo "  $zahl ist kleiner als 40."
 fi
@@ -56,7 +56,7 @@ for frucht in Apfel Birne Kirsche Mango; do
 done
 echo ""
 
-echo "For-Schleife (Zaehlen 1-5):"
+echo "For-Schleife (Zählen 1-5):"
 for i in $(seq 1 5); do
     echo "  Nummer: $i"
 done
@@ -77,7 +77,7 @@ testordner="TestOrdner"
 mkdir -p "$testordner"
 
 echo "Zeile 1: Hallo Welt" > "$testordner/test.txt"
-echo "Zeile 2: Shell ist maechtig" >> "$testordner/test.txt"
+echo "Zeile 2: Shell ist mächtig" >> "$testordner/test.txt"
 echo "Zeile 3: Fertig!" >> "$testordner/test.txt"
 
 echo "  Inhalt von test.txt:"
@@ -100,15 +100,15 @@ for datei in "$testordner"/*; do
 done
 echo ""
 
-# Aufraeumen
+# Aufräumen
 rm -rf "$testordner"
-echo "  Ordner aufgeraeumt."
+echo "  Ordner aufgeräumt."
 echo ""
 
 # --- Funktionen ---
 echo "Funktionen:"
 
-begruessung() {
+begrüßung() {
     echo "  Hallo, $1!"
 }
 
@@ -116,8 +116,8 @@ addiere() {
     echo $(($1 + $2))
 }
 
-begruessung "Welt"
-begruessung "Shell"
+begrüßung "Welt"
+begrüßung "Shell"
 
 ergebnis=$(addiere 10 20)
 echo "  10 + 20 = $ergebnis"
@@ -126,8 +126,8 @@ echo ""
 # --- Pipeline ---
 echo "Pipeline-Beispiele:"
 
-# Dateien im aktuellen Ordner (Top 5 nach Groesse)
-echo "  Top 5 Dateien (nach Groesse):"
+# Dateien im aktuellen Ordner (Top 5 nach Größe)
+echo "  Top 5 Dateien (nach Größe):"
 ls -lS *.sh *.txt 2>/dev/null | head -5 | while read -r zeile; do
     echo "    $zeile"
 done

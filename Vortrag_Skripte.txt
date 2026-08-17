@@ -2,13 +2,13 @@
   KLEINER VORTRAG: Was sind Skripte?
 ════════════════════════════════════════════════════════════════
 
-  Idee fuer einen kurzen Vortrag (ca. 3 bis 5 Minuten)
+  Idee für einen kurzen Vortrag (ca. 3 bis 5 Minuten)
 
 
   1. Einstieg
   ───────────
   "Ein Skript ist eine Datei mit Befehlen, die ein Computer
-  nacheinander ausfuehrt. Statt dieselben Befehle immer wieder
+  nacheinander ausführt. Statt dieselben Befehle immer wieder
   per Hand einzugeben, schreibt man sie einmal in eine Datei
   und startet diese Datei dann erneut."
 
@@ -16,7 +16,7 @@
   - Arbeit zu automatisieren
   - Zeit zu sparen
   - Fehler zu vermeiden
-  - Aufgaben immer gleich auszufuehren
+  - Aufgaben immer gleich auszuführen
 
 
   2. Was ist ein Skript?
@@ -45,21 +45,21 @@
   Typische Unterschiede:
 
   Skript:
-  - oft kuerzer und schneller geschrieben
-  - haeufig fuer Automatisierung gedacht
-  - wird oft direkt durch eine Laufzeitumgebung ausgefuehrt
+  - oft kürzer und schneller geschrieben
+  - häufig für Automatisierung gedacht
+  - wird oft direkt durch eine Laufzeitumgebung ausgeführt
     (z.B. PowerShell, Bash oder Python)
-  - ideal fuer wiederkehrende Aufgaben
+  - ideal für wiederkehrende Aufgaben
 
   Klassisches Programm:
-  - oft groesser und umfangreicher
-  - haeufig mit Benutzeroberflaeche oder vielen Funktionen
-  - wird oft kompiliert oder als eigenstaendige Anwendung verteilt
-  - ideal fuer komplette Anwendungen
+  - oft größer und umfangreicher
+  - häufig mit Benutzeroberfläche oder vielen Funktionen
+  - wird oft kompiliert oder als eigenständige Anwendung verteilt
+  - ideal für komplette Anwendungen
 
   Wichtig:
-  Die Grenze ist nicht immer strikt. Ein grosses Skript kann
-  sehr komplex sein, und kleine Programme koennen ebenfalls
+  Die Grenze ist nicht immer strikt. Ein großes Skript kann
+  sehr komplex sein, und kleine Programme können ebenfalls
   einfach aufgebaut sein.
 
 
@@ -81,13 +81,13 @@
   - Mit einer Programmiersprache schreibt man Code.
   - Ein Skript ist eine Datei, in der dieser Code steht.
 
-  Manche Sprachen werden sehr oft fuer Skripte genutzt,
+  Manche Sprachen werden sehr oft für Skripte genutzt,
   deshalb nennt man sie oft Skriptsprachen.
 
 
   5. Was ist eine Skriptsprache?
   ──────────────────────────────
-  Eine Skriptsprache ist eine Programmiersprache, die oft fuer
+  Eine Skriptsprache ist eine Programmiersprache, die oft für
   Automatisierung, schnelle Aufgaben und Systemsteuerung genutzt wird.
 
   Bekannte Beispiele:
@@ -103,17 +103,17 @@
   - kleine Tools schnell zu erstellen
 
 
-  6. Warum sind Skripte so nuetzlich?
+  6. Warum sind Skripte so nützlich?
   ─────────────────────────────────
   Ohne Skript:
   - dieselben Befehle immer wieder von Hand eingeben
-  - hoehere Fehlergefahr
+  - höhere Fehlergefahr
   - langsamer arbeiten
 
   Mit Skript:
   - einmal schreiben, oft benutzen
-  - gleiche Qualitaet bei jedem Durchlauf
-  - einfache Aufgaben koennen automatisiert werden
+  - gleiche Qualität bei jedem Durchlauf
+  - einfache Aufgaben können automatisiert werden
   - sehr hilfreich in IT, Administration und Entwicklung
 
 
@@ -122,7 +122,7 @@
   PowerShell-Skript:
 
     Write-Host "Hallo, willkommen zum Kurs!"
-    $name = Read-Host "Wie heisst du?"
+    $name = Read-Host "Wie heißt du?"
     Write-Host "Hallo $name"
 
   Dieses Skript:
@@ -135,12 +135,12 @@
   Schon mit wenigen Zeilen kann ein Skript sinnvoll sein.
 
 
-  8. Merksatz fuer den Vortrag
+  8. Merksatz für den Vortrag
   ────────────────────────────
   "Eine Programmiersprache ist das Werkzeug.
    Ein Skript ist die Datei, die mit diesem Werkzeug geschrieben wurde.
    Skripte werden oft genutzt, um Aufgaben schnell und automatisch
-   auszufuehren."
+   auszuführen."
 
 
   9. Kurzes Fazit
@@ -157,5 +157,5 @@
   ──────────────────────────
   "Gerade in der IT sind Skripte sehr wichtig, weil sie helfen,
   wiederkehrende Aufgaben schnell, sauber und automatisch zu erledigen.
-  Deshalb ist PowerShell eine besonders praktische Sprache fuer
+  Deshalb ist PowerShell eine besonders praktische Sprache für
   Administration und Automatisierung."

@@ -1,10 +1,10 @@
-# ================================================================
+﻿# ================================================================
 #  Level 3: Benutzereingabe & Berechnungen – AUFGABEN
 #  Ersetze ___ durch den richtigen Code.
 # ================================================================
 
 # ── AUFGABE 3.1 ──────────────────────────────────────────────
-# Frage den Benutzer nach seinem Namen und begrüsse ihn.
+# Frage den Benutzer nach seinem Namen und begrüße ihn.
 
 # $eingabeName = Read-Host "___"
 # Write-Host "Hallo ___! Willkommen!" -ForegroundColor Green

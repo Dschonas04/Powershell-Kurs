@@ -6,7 +6,7 @@
 # ================================================================
 
 # ── AUFGABE S.1: Ausgabe & Variablen ────────────────────────
-# Erstelle Variablen fuer deinen Namen und dein Alter.
+# Erstelle Variablen für deinen Namen und dein Alter.
 # Berechne dein Geburtsjahr (aktuelles Jahr - Alter).
 # Gib alles formatiert aus.
 
@@ -42,8 +42,8 @@
 
 # ── AUFGABE S.4: Dateien erstellen & lesen ──────────────────
 # Erstelle einen Ordner "ShellTest".
-# Schreibe 5 Zeilen in eine Datei "log.txt" (mit >> anhaengen).
-# Zaehle die Zeilen mit wc und gib den Inhalt aus.
+# Schreibe 5 Zeilen in eine Datei "log.txt" (mit >> anhängen).
+# Zähle die Zeilen mit wc und gib den Inhalt aus.
 
 # mkdir -p "___"
 # echo "Log Eintrag 1" > "ShellTest/log.txt"
@@ -59,7 +59,7 @@
 
 # ── AUFGABE S.5: Funktionen ────────────────────────────────
 # Schreibe eine Funktion "max" die zwei Zahlen vergleicht
-# und die groessere zurueckgibt.
+# und die größere zurückgibt.
 # Teste mit: ergebnis=$(max 15 23)
 
 # ___() {
@@ -71,13 +71,13 @@
 # }
 #
 # ergebnis=$(___ 15 23)
-# echo "Die groessere Zahl ist: $ergebnis"
+# echo "Die größere Zahl ist: $ergebnis"
 
 
 # ── AUFGABE S.6: Pipeline ──────────────────────────────────
 # Liste alle .sh Dateien im aktuellen Ordner auf,
-# sortiere nach Groesse (absteigend) und zeige nur die
-# Top 3 mit Dateiname und Groesse.
+# sortiere nach Größe (absteigend) und zeige nur die
+# Top 3 mit Dateiname und Größe.
 
 # ls -lS ___ | head -___ | while read -r zeile; do
 #     echo "$zeile"
@@ -95,4 +95,4 @@
 
 echo ""
 echo "Alle Aufgaben befinden sich oben im Code!"
-echo "Entferne # und ersetze ___ um sie zu loesen."
+echo "Entferne # und ersetze ___ um sie zu lösen."

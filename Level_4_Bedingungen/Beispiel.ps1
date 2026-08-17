@@ -1,4 +1,4 @@
-# ================================================================
+﻿# ================================================================
 #  Level 4: Bedingungen – BEISPIELE
 #  Führe diese Datei aus (F5) oder markiere Teile (F8).
 # ================================================================
@@ -8,7 +8,7 @@ $temperatur = 22
 
 Write-Host "Temperatur: $temperatur°C"
 if ($temperatur -gt 30) {
-    Write-Host "  Es ist heiss!"
+    Write-Host "  Es ist heiß!"
 } elseif ($temperatur -ge 15) {
     Write-Host "  Angenehme Temperatur!"
 } elseif ($temperatur -ge 0) {
@@ -19,10 +19,10 @@ if ($temperatur -gt 30) {
 
 # --- Logische Operatoren ---
 $personAlter = 20
-$hatFuehrerschein = $true
+$hatFührerschein = $true
 
-Write-Host "`nAutofahren-Check (Alter: $personAlter, Fuehrerschein: $hatFuehrerschein):"
-if ($personAlter -ge 18 -and $hatFuehrerschein) {
+Write-Host "`nAutofahren-Check (Alter: $personAlter, Führerschein: $hatFührerschein):"
+if ($personAlter -ge 18 -and $hatFührerschein) {
     Write-Host "  Du darfst fahren!"
 } else {
     Write-Host "  Du darfst nicht fahren."
