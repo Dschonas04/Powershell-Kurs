@@ -1,17 +1,19 @@
-﻿$ErrorActionPreference = 'Stop'
+﻿#Requires -Version 7
+$ErrorActionPreference = 'Stop'
 
 $kursElemente = @(
-    [pscustomobject]@{ Key = '0'; Name = 'Level 0 - Einstieg'; Folder = 'Level_0_Einstieg'; TheoryFile = 'Anleitung.txt'; ExampleFile = $null; TaskFile = $null }
-    [pscustomobject]@{ Key = '1'; Name = 'Level 1 - Ausgabe'; Folder = 'Level_1_Ausgabe'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabe.ps1' }
-    [pscustomobject]@{ Key = '2'; Name = 'Level 2 - Variablen'; Folder = 'Level_2_Variablen'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabe.ps1' }
-    [pscustomobject]@{ Key = '3'; Name = 'Level 3 - Eingabe'; Folder = 'Level_3_Eingabe'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabe.ps1' }
-    [pscustomobject]@{ Key = '4'; Name = 'Level 4 - Bedingungen'; Folder = 'Level_4_Bedingungen'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabe.ps1' }
-    [pscustomobject]@{ Key = '5'; Name = 'Level 5 - Arrays'; Folder = 'Level_5_Arrays'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabe.ps1' }
-    [pscustomobject]@{ Key = '6'; Name = 'Level 6 - Schleifen'; Folder = 'Level_6_Schleifen'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabe.ps1' }
-    [pscustomobject]@{ Key = '7'; Name = 'Level 7 - Funktionen'; Folder = 'Level_7_Funktionen'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabe.ps1' }
-    [pscustomobject]@{ Key = '8'; Name = 'Level 8 - Dateien & Pipeline'; Folder = 'Level_8_Dateien_Pipeline'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabe.ps1' }
-    [pscustomobject]@{ Key = 'B'; Name = 'Zusatz - Batch'; Folder = 'Zusatz_Batch'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.bat'; TaskFile = 'Aufgabe.bat' }
-    [pscustomobject]@{ Key = 'S'; Name = 'Zusatz - Shell'; Folder = 'Zusatz_Shell'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.sh'; TaskFile = 'Aufgabe.sh' }
+    [pscustomobject]@{ Key = '0'; Name = 'Level 0 - Einstieg'; Folder = 'Level_0_Einstieg'; TheoryFile = 'Anleitung.txt'; ExampleFile = $null; TaskFile = $null; Check = $null }
+    [pscustomobject]@{ Key = '1'; Name = 'Level 1 - Ausgabe'; Folder = 'Level_1_Ausgabe'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabenstellung.txt'; Check = '1' }
+    [pscustomobject]@{ Key = '2'; Name = 'Level 2 - Variablen'; Folder = 'Level_2_Variablen'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabenstellung.txt'; Check = '2' }
+    [pscustomobject]@{ Key = '3'; Name = 'Level 3 - Eingabe'; Folder = 'Level_3_Eingabe'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabenstellung.txt'; Check = '3' }
+    [pscustomobject]@{ Key = '4'; Name = 'Level 4 - Bedingungen'; Folder = 'Level_4_Bedingungen'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabenstellung.txt'; Check = '4' }
+    [pscustomobject]@{ Key = '5'; Name = 'Level 5 - Arrays'; Folder = 'Level_5_Arrays'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabenstellung.txt'; Check = '5' }
+    [pscustomobject]@{ Key = '6'; Name = 'Level 6 - Schleifen'; Folder = 'Level_6_Schleifen'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabenstellung.txt'; Check = '6' }
+    [pscustomobject]@{ Key = '7'; Name = 'Level 7 - Funktionen'; Folder = 'Level_7_Funktionen'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabenstellung.txt'; Check = '7' }
+    [pscustomobject]@{ Key = '8'; Name = 'Level 8 - Dateien & Pipeline'; Folder = 'Level_8_Dateien_Pipeline'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.ps1'; TaskFile = 'Aufgabenstellung.txt'; Check = '8' }
+    [pscustomobject]@{ Key = 'A'; Name = 'Abschlussaufgabe'; Folder = 'Abschluss_Aufgabe'; TheoryFile = 'Aufgabenstellung.txt'; ExampleFile = $null; TaskFile = $null; Check = 'abschluss' }
+    [pscustomobject]@{ Key = 'B'; Name = 'Zusatz - Batch'; Folder = 'Zusatz_Batch'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.bat'; TaskFile = 'Aufgabe.bat'; Check = $null }
+    [pscustomobject]@{ Key = 'S'; Name = 'Zusatz - Shell'; Folder = 'Zusatz_Shell'; TheoryFile = 'Theorie.txt'; ExampleFile = 'Beispiel.sh'; TaskFile = 'Aufgabe.sh'; Check = $null }
 )
 
 function Show-Header {
@@ -176,9 +178,12 @@ function Start-LevelMenu {
             Write-Host '2 - Beispiel anzeigen'
         }
         if ($Item.TaskFile) {
-            Write-Host '3 - Aufgabe anzeigen'
+            Write-Host '3 - Aufgabenstellung anzeigen'
         }
         Write-Host '4 - Mini-Check starten'
+        if ($Item.Check) {
+            Write-Host '5 - Meine Lösung prüfen (uebung.ps1)'
+        }
         Write-Host 'M - Zurück zum Hauptmenü'
         Write-Host ''
 
@@ -198,11 +203,20 @@ function Start-LevelMenu {
             '3' {
                 if ($Item.TaskFile) {
                     $path = Get-ElementPath -Item $Item -FileName $Item.TaskFile
-                    Show-FileContent -Path $path -Label "$($Item.Name) - Aufgabe"
+                    Show-FileContent -Path $path -Label "$($Item.Name) - Aufgabenstellung"
                 }
             }
             '4' {
                 Start-LevelQuiz -Item $Item
+            }
+            '5' {
+                if ($Item.Check) {
+                    Show-Header "$($Item.Name) - Prüfung"
+                    # eigene PowerShell: der Prüfer beendet sich mit exit, das Menü soll bleiben
+                    & (Get-Process -Id $PID).Path -NoProfile -File (Join-Path $PSScriptRoot 'pruefen.ps1') $Item.Check
+                    Write-Host ''
+                    Pause-Kurs
+                }
             }
             'M' {
                 return
@@ -216,7 +230,7 @@ function Start-LevelMenu {
 }
 
 while ($true) {
-    Show-Header 'PowerShell Kurs - Interaktiv'
+    Show-Header 'PowerShell-Kurs'
     Write-Host 'Wähle ein Level oder einen Zusatzbereich:'
     Write-Host ''
 

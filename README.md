@@ -1,65 +1,128 @@
-# PowerShell Kurs
+# PowerShell-Kurs
 
-Lerne PowerShell Schritt für Schritt in 8 Leveln!
+[![Prüfung](https://github.com/Dschonas04/Powershell-Kurs/actions/workflows/pruefen.yml/badge.svg)](https://github.com/Dschonas04/Powershell-Kurs/actions/workflows/pruefen.yml)
+[![Lizenz: CC BY-SA 4.0](https://img.shields.io/badge/Lizenz-CC%20BY--SA%204.0-lightgrey.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE-CODE)
 
-## Struktur
+PowerShell in acht Leveln und einer Abschlussaufgabe, mit einem Prüfer,
+der nach jeder Aufgabe sagt, ob sie stimmt.
 
-Jedes Level hat **3 Dateien**:
+Gedacht für alle, die noch nie ein Skript geschrieben haben. Level 0
+erklärt, wie man eine Skriptdatei anlegt und startet; danach geht es von
+der ersten Ausgabe bis zu Funktionen, Dateien und der Pipeline.
 
-| Datei          | Zweck                                         |
-| -------------- | --------------------------------------------- |
-| `Theorie.txt`  | Konzepte lesen & verstehen                    |
-| `Beispiel.ps1` | Lauffähige Beispiele anschauen & ausführen    |
-| `Aufgabe.ps1`  | Selbst lösen (Lücken mit `___` ausfüllen)     |
+## Aufbau
 
-## Einstieg
+Jedes Level hat vier Dateien:
 
-Noch nie ein Skript erstellt? Starte hier:
+| Datei                  | Zweck                                          |
+| ---------------------- | ---------------------------------------------- |
+| `Theorie.txt`          | Konzepte lesen und verstehen                   |
+| `Beispiel.ps1`         | Lauffähige Beispiele zum Ausprobieren          |
+| `Aufgabenstellung.txt` | was zu tun ist, in Worten                      |
+| `uebung.ps1`           | deine Lösung -- du fängst mit einer leeren Datei an |
 
-| Ordner                                  | Inhalt                                       |
-| --------------------------------------- | -------------------------------------------- |
-| [Level 0 – Einstieg](Level_0_Einstieg/) | Wie man Skript-Dateien erstellt und ausführt |
+Die Musterlösungen liegen **nicht** neben der Aufgabe, sondern gesammelt
+in [`Loesungen/`](Loesungen/). Wer sie sehen will, muss hingehen.
 
-Oder starte direkt das interaktive Menü mit:
+## Los geht es
 
-- `pwsh ./Start_Kurs_Interaktiv.ps1`
-- alternativ in Windows PowerShell: `./Start_Kurs_Interaktiv.ps1`
+```powershell
+pwsh ./Start_Kurs.ps1            # Menü durch alle Level, mit Prüfen
+pwsh ./pruefen.ps1               # alles prüfen
+pwsh ./pruefen.ps1 3             # nur Level 3
+pwsh ./pruefen.ps1 abschluss     # nur die Abschlussaufgabe
+pwsh ./pruefen.ps1 -Loesung      # prüft die Musterlösungen, muss grün sein
+```
 
-## Level-Übersicht
+Ein Beispiel ausprobieren:
 
-| Level                                | Thema                             |
-| ------------------------------------ | --------------------------------- |
-| [Level 1](Level_1_Ausgabe/)          | Ausgabe auf der Konsole           |
-| [Level 2](Level_2_Variablen/)        | Variablen & Datentypen            |
-| [Level 3](Level_3_Eingabe/)          | Benutzereingabe & Berechnungen    |
-| [Level 4](Level_4_Bedingungen/)      | Bedingungen (if / switch)         |
-| [Level 5](Level_5_Arrays/)           | Arrays & Hashtables               |
-| [Level 6](Level_6_Schleifen/)        | Schleifen (for / foreach / while) |
-| [Level 7](Level_7_Funktionen/)       | Funktionen                        |
-| [Level 8](Level_8_Dateien_Pipeline/) | Dateien, Pipeline & Cmdlets       |
+```powershell
+pwsh ./Level_1_Ausgabe/Beispiel.ps1
+```
 
-## Zusatz: Andere Skriptsprachen
+In VS Code genügt es, einen Block zu markieren und **F8** zu drücken, um
+nur diesen Teil auszuführen.
 
-Neben PowerShell gibt es zwei weitere wichtige Skriptsprachen:
+## Level
+
+| Level                                       | Thema                                      |
+| ------------------------------------------- | ------------------------------------------ |
+| [Level 0](Level_0_Einstieg/)                | Skriptdateien anlegen und ausführen        |
+| [Level 1](Level_1_Ausgabe/)                 | Write-Host, Write-Output, Warnungen        |
+| [Level 2](Level_2_Variablen/)               | Variablen, Datentypen, Interpolation       |
+| [Level 3](Level_3_Eingabe/)                 | Read-Host, Umwandeln, Rechnen              |
+| [Level 4](Level_4_Bedingungen/)             | if, elseif, switch, Parameter              |
+| [Level 5](Level_5_Arrays/)                  | Arrays und Hashtables                      |
+| [Level 6](Level_6_Schleifen/)               | for, foreach, while, do-while              |
+| [Level 7](Level_7_Funktionen/)              | Funktionen, Parameter, Rückgabewerte       |
+| [Level 8](Level_8_Dateien_Pipeline/)        | Dateien, Pipeline, CSV                     |
+| [Abschluss](Abschluss_Aufgabe/)             | eine Schülerverwaltung, alles zusammen     |
+
+## Was der Prüfer prüft
+
+Der Prüfer startet dein Skript in einer eigenen PowerShell und in einem
+leeren Arbeitsordner, also so, wie es auch jemand anderes starten würde.
+Was es dort anlegt, räumt er danach weg.
+
+Er schaut nicht nur auf den Text, sondern auch darauf, wie er
+herauskommt. In Level 1 zählt, ob eine Zeile von `Write-Host` oder von
+`Write-Output` stammt. Das ist der Unterschied, an dem später jede
+Pipeline hängt.
+
+Wo das Skript Eingaben braucht, tippt der Prüfer sie für dich. Wo es
+Parameter hat, ruft er es mit anderen Werten auf als in der
+Aufgabenstellung. Funktionen ruft er direkt auf. Eine Lösung, die nur
+für das eine Beispiel stimmt, fällt dabei auf.
+
+In Level 8 läuft das Skript zweimal. Ein Skript, das beim zweiten Mal
+über seine eigenen Reste stolpert, ist noch nicht fertig.
+
+## Warum du mit einer leeren Datei anfängst
+
+Ein Lückentext prüft, ob du das fehlende Wort errätst. Eine leere Datei
+prüft, ob du das Skript schreiben kannst -- und das ist die Fähigkeit,
+um die es geht. Der Prüfer sagt dir nach jedem Versuch, was erwartet war
+und was herauskam; mehr Hilfe braucht es nicht.
+
+## Zusatz: andere Skriptsprachen
+
+Zum Vergleichen, ohne Prüfer:
 
 | Ordner                        | Sprache                    | Dateityp |
 | ----------------------------- | -------------------------- | -------- |
 | [Zusatz_Batch](Zusatz_Batch/) | Batch (Windows CMD)        | `.bat`   |
 | [Zusatz_Shell](Zusatz_Shell/) | Bash / Shell (Linux/macOS) | `.sh`    |
 
-Jeder Zusatz enthält Theorie, Beispiele und Aufgaben – ideal zum Vergleichen mit PowerShell!
+Wer Bash richtig lernen will: dafür gibt es den
+[Shell-Kurs](https://github.com/Dschonas04/Shell-Kurs), mit Prüfer.
 
-## So arbeitest du
+[`Vortrag_Skripte.txt`](Vortrag_Skripte.txt) ist die Vorlage für einen
+kurzen Vortrag, was Skripte sind und wofür man sie braucht.
 
-1. Lies zuerst die **Theorie.txt** im jeweiligen Level
-2. Öffne die **Beispiel.ps1** und führe sie aus (F5 oder F8 für Abschnitte)
-3. Löse die **Aufgabe.ps1** selbstständig
-4. Weiter zum nächsten Level!
-5. Schau dir am Ende die **Zusatz-Ordner** für Batch & Shell an
+## Voraussetzungen
 
-Interaktiv geht es auch: Das Skript `Start_Kurs_Interaktiv.ps1` zeigt dir die Level als Menü,
-öffnet Theorie/Beispiele/Aufgaben direkt in der Konsole und enthält kleine Mini-Checks.
+PowerShell 7 (`pwsh`) auf Windows, Linux oder macOS. Prüfen mit
+`$PSVersionTable.PSVersion`. Die Beispiele und Übungen laufen auch im
+alten Windows PowerShell 5.1, der Prüfer und das Menü brauchen 7.
+PowerShell 7 installieren:
+[learn.microsoft.com/powershell](https://learn.microsoft.com/powershell/scripting/install/installing-powershell).
 
-## Tipp
+Lässt Windows das Skript nicht laufen, einmalig für den eigenen Benutzer
+erlauben:
 
-In VS Code: Markiere einen Code-Block und drücke **F8**, um nur diesen Teil auszuführen.
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+
+## Mitmachen
+
+Fehler gefunden oder eine Idee für eine Aufgabe? Siehe
+[CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Lizenz
+
+Die Kurstexte (Theorie, Aufgabenstellungen, README) stehen unter
+[CC BY-SA 4.0](LICENSE): frei nutzbar und veränderbar, mit Namensnennung
+und unter gleichen Bedingungen. Der Code (Beispiele, Musterlösungen,
+Prüfer) steht unter der [MIT-Lizenz](LICENSE-CODE).
